@@ -10,7 +10,7 @@ import { Book } from '../book';
 export class BookComponent implements OnInit {
 
   @Input() book!: Book;
-  bookImgUrl!: string;
+  bookImgUrl: string = 'https://m.media-amazon.com/images/I/716WjWGXjWL.jpg'
   showFullDescription = false;
   descriptionMaxLength = 150;
 
@@ -20,7 +20,6 @@ export class BookComponent implements OnInit {
 
   getImgUrl(): void {
     if (this.book.volumeInfo.imageLinks.smallThumbnail) this.bookImgUrl = this.book.volumeInfo.imageLinks.smallThumbnail
-    else this.bookImgUrl = 'https://m.media-amazon.com/images/I/716WjWGXjWL.jpg'
   }
 
   get shortDescription(): string {
@@ -28,7 +27,7 @@ export class BookComponent implements OnInit {
   }
 
   get fullDescription(): string {
-    return this.book.volumeInfo.description || '';
+    return this.book.volumeInfo.description.slice(0, 200) || '';
   }
 
   toggleDescription() {

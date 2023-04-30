@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { BookService } from './book.service';
 import { Book } from './book';
 import { Observable } from 'rxjs';
@@ -9,15 +9,19 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   bookName!: string;
   books!: Book[];
   books$!: Observable<Book[]>;
 
   constructor(private bookService: BookService) { }
   
-  onSearchBook(): void {
-    console.log('this.bookName:', this.bookName)
-    this.books$ = this.bookService.getBooks(this.bookName)
+  ngOnInit(): void {
+    this.books$ = this.bookService.books$  
   }
+
+  onSearchBook(): void {
+    this.bookService.searchBooks(this.bookName)
+  }
+
 }

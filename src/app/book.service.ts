@@ -9,22 +9,22 @@ import { ApiRes } from './api-res';
 })
 export class BookService {
   private subject = new ReplaySubject<Book[]>(1);
+  readonly books$ = this.subject.asObservable();
   private state?: Book[];
-  
+
   constructor(private http: HttpClient) { }
-  
+
   getBooks(bookName: string): Observable<Book[]> {
-    this.initBooks(bookName);
+    this.searchBooks(bookName);
     return this.subject.asObservable();
   }
-  
-  initBooks(bookName: string) {
+
+  searchBooks(bookName: string): void {
     const BASE_URL: string = `https://www.googleapis.com/books/v1/volumes?q=${bookName}&fields=items(volumeInfo(title,description,imageLinks(smallThumbnail)))`
-    this.state = [];
+    // this.state = [];
     this.http.get<ApiRes>(BASE_URL).subscribe(
       (res: ApiRes) => {
         const books = res.items
-        console.log('res:', books)
         this.subject.next(books);
         this.state = books;
       }
