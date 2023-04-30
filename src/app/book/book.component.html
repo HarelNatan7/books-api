@@ -1,0 +1,15 @@
+<article class="book">
+    <div>
+        <img [src]="book.volumeInfo.imageLinks.smallThumbnail" >
+    </div>
+    <div class="info">
+
+        <h3>{{book.volumeInfo.title}}</h3>
+        
+        <div class="book-description">
+            <p *ngIf="!showFullDescription">{{shortDescription}}...</p>
+            <p *ngIf="showFullDescription">{{fullDescription}}</p>
+            <button (click)="toggleDescription()">{{showFullDescription ? 'Read less' : 'Read more'}}</button>
+          </div>
+    </div>
+</article>

@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    margin: 0;
+    color: #e0e0e0;
+    background-color: #3F4E4F;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+button {
+    cursor: pointer;
+    padding: 8px;
+    color: #e0e0e0;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: transparent;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 20%;
+    transition: .3s;
+    &:hover {
+        scale: 1.2;
+    }
+}
+
+// Helpers
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
