@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { BookService } from './book.service';
 import { Book } from './book';
 import { Observable } from 'rxjs';
+import { AddCircle } from '@material-ui/icons';
 
 @Component({
   selector: 'app-root',

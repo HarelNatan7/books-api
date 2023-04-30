@@ -15,7 +15,6 @@ header {
 .form-container {
   display: flex;
   flex-direction: column;
-  gap: 50px;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -31,9 +30,18 @@ ngx-typed-js {
 }
 
 form {
+  position: relative;
   width: 100%;
   flex-direction: column;
   gap: 25px;
+  span {
+    cursor: pointer;
+    position: absolute;
+    right: 13%;
+    top: 12px;
+    font-size: 40px;
+    color: #2c3639;
+  }
 }
 
 input {
@@ -47,8 +55,8 @@ input {
 
 .book-list {
   margin: 25px 0;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
   justify-content: center;
 }
@@ -58,19 +66,20 @@ input {
     font-size: 60px;
   }
 
-  .form-container {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-
   ngx-typed-js {
     height: 250px;
   }
 
+  form {
+    span {
+      position: absolute;
+      right: 15%;
+      top: 20px;
+      font-size: 50px;
+      color: #2c3639;
+  
+    }
+  }
   .typing {
     font-size: 40px;
   }

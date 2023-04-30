@@ -3,13 +3,14 @@
     <header> <span>BooksAI</span></header>
 
     <div class="form-container">
-        <ngx-typed-js class="flex-center" [strings]="['Start by searching your book', 'Absolute Free', 'Search your books by name', 'Find your lovely books']"
+        <ngx-typed-js class="flex-center"
+            [strings]="['Start by searching your book', 'Absolute Free', 'Search your books by name', 'Find your lovely books']"
             [shuffle]="true" [typeSpeed]="40">
             <span class="typing"></span>
         </ngx-typed-js>
         <form class="flex-center">
             <input type="text" name="bookName" placeholder="Search By Name..." [(ngModel)]="bookName">
-            <button type="submit" (click)="onSearchBook()">Search</button>
+            <mat-icon><span class="material-symbols-outlined" (click)="onSearchBook()">search</span></mat-icon>
         </form>
     </div>
     <div class="book-list">

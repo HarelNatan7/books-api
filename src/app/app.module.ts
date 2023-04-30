@@ -7,6 +7,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BookComponent } from './book/book.component';
 import { NgxTypedJsModule } from 'ngx-typed-js';
+import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { NgxTypedJsModule } from 'ngx-typed-js';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxTypedJsModule
+    NgxTypedJsModule,
+    MatIconModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
