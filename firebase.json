@@ -1,9 +1,6 @@
 {
   "hosting": {
     "public": "y",
-    "predeploy": [
-      "ng build"
-    ],
     "ignore": [
       "firebase.json",
       "**/.*",
