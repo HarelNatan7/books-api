@@ -1,15 +1,14 @@
 <article class="book">
-    <div>
+    <div class="img-container">
         <img [src]="bookImgUrl" >
     </div>
-    <div class="info">
 
         <h3>{{book.volumeInfo.title}}</h3>
 
         <div class="book-description flex-center">
-            <p *ngIf="!showFullDescription">{{book.volumeInfo.description  | slice:0:100 }}...</p>
-            <p *ngIf="showFullDescription">{{book.volumeInfo.description | slice:0:200 }}</p>
-            <button (click)="toggleDescription()">{{showFullDescription ? 'Read less' : 'Read more'}}</button>
-          </div>
-    </div>
+            <p *ngIf="!showFullDescription">{{(book.volumeInfo.description  | slice:0:100) || 'Book Has No Description' }}...</p>
+            <p *ngIf="showFullDescription">{{book.volumeInfo.description | slice:0:250 }}</p>
+        </div>
+        <button *ngIf="book.volumeInfo.description" (click)="toggleDescription()">{{showFullDescription ? 'Read less' : 'Read more'}}</button>
 </article>
+
