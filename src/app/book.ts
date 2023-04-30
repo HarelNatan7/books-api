@@ -7,7 +7,3 @@ export interface Book {
         }
     }
 }
-
-export interface ApiRes {
-   items: Book[]
-}

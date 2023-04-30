@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ApiRes, Book } from './book';
 import { Observable, ReplaySubject, map } from 'rxjs';
+import { Book } from './book';
+import { ApiRes } from './api-res';
 
 @Injectable({
   providedIn: 'root'

@@ -1,31 +1,33 @@
 .book {
-    display: flex;
-    // align-items: center;
-    justify-content: center;
-    gap: 12px;
-    border: 1px solid #00adb5;
-    border-radius: 8px;
-    padding: 8px;
-    width: 333px;
-    
-    img {
-        width: 155px;
-        border-radius: 4px;
-    }
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  border: 1px solid #a5bdbe;
+  border-radius: 8px;
+  padding: 24px;
+  width: 280px;
 
-    .info {
-        display: grid;
-        gap: 8px;
-        align-items: center;
-    }
+  img {
+    width: 120px;
+    border-radius: 4px;
+  }
 
-    button {
-        width: 50%;
-    }
+  .info {
+    display: grid;
+    gap: 8px;
+    align-items: center;
+  }
+
+  button {
+    width: 50%;
+  }
 }
 
-@media screen and (min-width: 590px) {
-.book {
+@media screen and (min-width: 620px) {
+  .book {
     width: 555px;
-}
+    img {
+      width: 177px;
+    }
+  }
 }

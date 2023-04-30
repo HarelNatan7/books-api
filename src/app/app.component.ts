@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BookService } from './book.service';
 import { Book } from './book';
 import { Observable } from 'rxjs';
@@ -8,16 +8,12 @@ import { Observable } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   bookName!: string;
   books!: Book[];
   books$!: Observable<Book[]>;
-  constructor(private bookService: BookService,
 
-  ) { }
-
-  ngOnInit(): void {
-  }
+  constructor(private bookService: BookService) { }
   
   onSearchBook(): void {
     console.log('this.bookName:', this.bookName)

@@ -5,8 +5,8 @@
     <div class="info">
 
         <h3>{{book.volumeInfo.title}}</h3>
-        
-        <div class="book-description">
+
+        <div class="book-description flex-center">
             <p *ngIf="!showFullDescription">{{shortDescription}}...</p>
             <p *ngIf="showFullDescription">{{fullDescription}}</p>
             <button (click)="toggleDescription()">{{showFullDescription ? 'Read less' : 'Read more'}}</button>

@@ -10,7 +10,7 @@ export class BookComponent {
 
   @Input() book!: Book;
   showFullDescription = false;
-  descriptionMaxLength = 200;
+  descriptionMaxLength = 150;
 
   get shortDescription(): string {
     return this.book.volumeInfo.description ? this.book.volumeInfo.description.slice(0, this.descriptionMaxLength) : '';
