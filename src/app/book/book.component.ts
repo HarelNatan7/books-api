@@ -19,7 +19,7 @@ export class BookComponent implements OnInit {
   }
 
   getImgUrl(): void {
-    if (this.book.volumeInfo.imageLinks.smallThumbnail) this.bookImgUrl = this.book.volumeInfo.imageLinks.smallThumbnail
+    if (this.book.volumeInfo.imageLinks?.smallThumbnail) this.bookImgUrl = this.book.volumeInfo.imageLinks.smallThumbnail
   }
 
   get shortDescription(): string {
@@ -27,7 +27,7 @@ export class BookComponent implements OnInit {
   }
 
   get fullDescription(): string {
-    return this.book.volumeInfo.description.slice(0, 200) || '';
+    return this.book.volumeInfo.description?.slice(0, 200) || '';
   }
 
   toggleDescription() {

@@ -25,6 +25,7 @@ export class BookService {
     this.http.get<ApiRes>(BASE_URL).subscribe(
       (res: ApiRes) => {
         const books = res.items
+        console.log('books:', books)
         this.subject.next(books);
         this.state = books;
       }
