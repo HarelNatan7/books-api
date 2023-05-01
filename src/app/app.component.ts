@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   bookName!: string;
   books!: Book[];
   books$!: Observable<Book[]>;
-
+  isLoading: boolean = false;
   constructor(private bookService: BookService) { }
   
   ngOnInit(): void {
@@ -22,7 +22,11 @@ export class AppComponent implements OnInit {
   }
 
   onSearchBook(): void {
+    this.isLoading = true;
     this.bookService.searchBooks(this.bookName)
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
   }
 
 }
